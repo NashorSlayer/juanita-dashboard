@@ -1,16 +1,29 @@
 "use client"
-import { Card, Title, Text } from '@tremor/react';
-import { Col, Row } from 'reactstrap';
+import { Card, Title, Text, AreaChart } from '@tremor/react';
 import Head from 'next/head';
-import { SalesChart, TopCards } from './components';
 
-export default function Home() {
+interface Props {
+  data: any[]
+  categories: string[]
+  index: string
+}
 
-  //invoca dashboards
+
+
+const Home: React.FC<Props> = (Props) => {
 
   return (
     <>
-      HOLA
+      <Head>
+        <title>Dashboard</title>
+      </Head>
+      <AreaChart
+        data={Props.data}
+        categories={Props.categories}
+        index={Props.index}
+      />
     </>
   )
 }
+
+export default Home;

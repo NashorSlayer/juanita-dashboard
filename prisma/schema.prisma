@@ -12,6 +12,8 @@ model boletas {
   Boleta       String?
   Productos    String?
   Precio_Total Float?  @map("Precio Total")
+  A_o          String? @map("Año")
+  Mes          String?
 
   @@ignore
 }
@@ -23,6 +25,8 @@ model facturas {
   Cantidad        BigInt?
   Precio_Unitario BigInt? @map("Precio Unitario")
   Precio_Total    BigInt? @map("Precio Total")
+  A_o             String? @map("Año")
+  Mes             String?
 
   @@ignore
 }
@@ -31,6 +35,8 @@ model facturas {
 model precios {
   Identificador String?
   Precio        BigInt?
+  A_o           String? @map("Año")
+  Mes           String?
 
   @@ignore
 }
@@ -39,6 +45,8 @@ model precios {
 model inventario {
   Identificador String?
   Cantidad      BigInt?
+  A_o           String? @map("Año")
+  Mes           String?
 
   @@ignore
 }
