@@ -14,8 +14,7 @@ model boletas {
   Precio_Total Float?  @map("Precio Total")
   A_o          String? @map("Año")
   Mes          String?
-
-  @@ignore
+  id           Int     @id @default(autoincrement())
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
@@ -27,8 +26,7 @@ model facturas {
   Precio_Total    BigInt? @map("Precio Total")
   A_o             String? @map("Año")
   Mes             String?
-
-  @@ignore
+  id              Int     @id @default(autoincrement())
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
@@ -37,8 +35,7 @@ model precios {
   Precio        BigInt?
   A_o           String? @map("Año")
   Mes           String?
-
-  @@ignore
+  id            Int     @id @default(autoincrement())
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
@@ -47,27 +44,22 @@ model inventario {
   Cantidad      BigInt?
   A_o           String? @map("Año")
   Mes           String?
-
-  @@ignore
+  id            Int     @id @default(autoincrement())
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model productos {
-  ID            String?
+  ID            String  @id
   Categor_a     String? @map("Categoría")
   Sub_categor_a String? @map("Sub-categoría")
   Nombre        String?
-
-  @@ignore
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model proveedores {
-  ID                 String?
+  ID                 String  @id
   Proveedor          String?
   Contacto_comercial String? @map("Contacto comercial")
   Email              String?
   Tel_fono           String? @map("Teléfono")
-
-  @@ignore
 }

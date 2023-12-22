@@ -1,14 +1,3 @@
-const navigation = [
-    { name: 'Dashboard', href: '/' },
-    { name: 'Boletas', href: '/boletas' },
-    { name: 'Productos', href: '/productos' },
-    { name: 'Proveedores', href: '/proveedores' },
-    { name: 'Inventario', href: '/inventario' },
-    { name: 'Facturas', href: '/facturas' },
-    { name: 'Precios', href: '/precios' },
-    { name: 'Reportes', href: '/reportes' },
-];
-
 export enum Meses {
     Enero = 1,
     Febrero = 2,
@@ -54,4 +43,5 @@ export enum PeriodosDeTiempo {
     Anual = "Anual",
 
 }
+
 
