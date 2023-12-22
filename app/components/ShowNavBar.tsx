@@ -14,10 +14,15 @@ const ShowNavBar: React.FC = () => {
     return (
         <Navbar className="background-color-white">
             <NavbarBrand>
-                <Link className="font-bold text-inherit" href="/">JuanitaShop </Link>
+                <Link
+
+                    className="font-bold text-inherit"
+                    href="/"> JuanitaShop</Link>
             </NavbarBrand>
             <NavbarContent>
-                <Link href="/Boletas">
+                <Link
+                    color="foreground"
+                    href="/Boletas">
                     Boletas
                 </Link>
             </NavbarContent>

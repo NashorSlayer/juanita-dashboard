@@ -2,13 +2,8 @@ import { NextResponse, NextRequest } from 'next/server';
 import { prisma } from '../prismaClient';
 
 export const GET = async (req: NextRequest, res: NextResponse) => {
-    const boletas = await prisma.boletas.findMany({
+    const facturas = await prisma.facturas.findMany({
         take: 100,
-        where: {
-            A_o: "2005"
-        }
     });
-    return NextResponse.json(boletas);
-}
-
-
+    return NextResponse.json(facturas);
+};

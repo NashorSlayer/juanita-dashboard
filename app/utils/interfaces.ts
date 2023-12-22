@@ -1,21 +1,21 @@
 export interface Boleta {
     Boleta: string;
-    Productos: Producto[];
+    Productos: string[];
     PrecioTotal: number;
     A_o: number;
     Mes: number;
-    id: string;
+    id: number;
 }
 
 export interface Facturas {
-    Proveedor: Proveedor;
-    Productos: Producto;
-    cantidad: number;
-    precioUnitario: number;
-    PrecioTotal: number;
+    Proveedor: string;
+    Productos: string;
+    Cantidad: number;
+    Precio_Unitario: number;
+    Precio_Total: number;
     A_o: number;
     Mes: number;
-    id: string;
+    id: number;
 }
 
 export interface Inventario {
@@ -23,27 +23,30 @@ export interface Inventario {
     Cantidad: number;
     A_o: number;
     Mes: number;
-    id: string;
-
+    id: number;
 }
 
 
 export interface Precios {
-    identificador: string;
-    precio: number;
+    Identificador: string;
+    Precio: number;
     A_o: number;
     Mes: number;
-    id: string;
+    id: number;
 }
 
 export interface Producto {
     ID: string;
     Categor_a: string;
-    SubCategor_a: string;
+    Sub_categor_a: string;
     Nombre: string;
 }
 
 export interface Proveedor {
-
+    ID: string;
+    Proveedor: string;
+    Contacto_comercial: string;
+    Email: string;
+    Tel_fono: string;
 }
 

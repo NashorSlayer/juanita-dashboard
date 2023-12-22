@@ -2,9 +2,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Boleta } from '../utils/interfaces'
+import GraficoLinea from '../components/GraficoLinea';
 
 const BoletasPage = () => {
     const [boletas, setBoletas] = useState([]);
+
 
     useEffect(() => {
         const getBoletas = async () => {
@@ -17,14 +19,12 @@ const BoletasPage = () => {
 
     return (
         <div>
-            <h1>Boletas</h1>
-            <ul>
-                {boletas.map((boleta: Boleta) => (
-                    <li key={boleta.id}>
-                        <h2>{boleta.Boleta}</h2>
-                    </li>
-                ))}
-            </ul>
+            <GraficoLinea
+                data={boletas}
+                index={"Boleta"}
+                categories={["Precio_Total"]}
+                title={"Boletas"}
+            />
         </div>
     );
 };

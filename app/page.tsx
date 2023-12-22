@@ -1,27 +1,34 @@
 "use client"
-import { Card, Title, Text, AreaChart } from '@tremor/react';
-import Head from 'next/head';
-
-interface Props {
-  data: any[]
-  categories: string[]
-  index: string
-}
+import GraficoBarra from './components/GraficoBarra';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 
 
-const Home: React.FC<Props> = (Props) => {
 
+const Home: React.FC = () => {
+  const [facturas, setFacturas] = useState([]);
+
+  useEffect(() => {
+
+    const getFacturas = async () => {
+      const response = await axios.get('http://localhost:3000/api/Facturas');
+      setFacturas(response.data);
+
+    };
+
+    getFacturas();
+
+  }, []);
   return (
     <>
-      <Head>
-        <title>Dashboard</title>
-      </Head>
-      <AreaChart
-        data={Props.data}
-        categories={Props.categories}
-        index={Props.index}
-      />
+      <GraficoBarra
+        data={facturas}
+        index={"Proveedor"}
+        categories={["Cantidad", "Producto"]}
+        title={"Proveedores vs Productos"}
+
+      ></GraficoBarra>
     </>
   )
 }

@@ -1,7 +1,6 @@
 "use client"
-import { Card, LineChart, Title } from "@tremor/react";
+import { BarChart, Card, Title } from "@tremor/react";
 import React from "react";
-
 
 type Props = {
     title: string
@@ -10,25 +9,24 @@ type Props = {
     categories: string[]
 }
 
-const GraficoLinea: React.FC<Props> = ({ data, index, categories, title }) => {
+const GraficoBarra: React.FC<Props> = ({ data, index, categories, title }) => {
     const [value, setValue] = React.useState(null);
     return (
         <>
             <Card>
                 <Title>{title}</Title>
-                <LineChart
-                    className="h-72 mt-4"
+                <BarChart
+                    className="mt-6"
                     data={data}
                     index={index}
                     categories={categories}
-                    colors={["neutral", "indigo"]}
+                    colors={["indigo", "rose", "orange", "emerald"]}
                     yAxisWidth={30}
                     onValueChange={(v: any) => setValue(v)}
-                    connectNulls={true}
                 />
             </Card>
         </>
     );
 };
 
-export default GraficoLinea;
+export default GraficoBarra;

@@ -11,8 +11,8 @@ datasource db {
 model boletas {
   Boleta       String?
   Productos    String?
-  Precio_Total Float?  @map("Precio Total")
-  A_o          String? @map("Año")
+  Precio_Total Float?
+  A_o          String?
   Mes          String?
   id           Int     @id @default(autoincrement())
 }
@@ -21,10 +21,10 @@ model boletas {
 model facturas {
   Proveedor       String?
   Producto        String?
-  Cantidad        BigInt?
-  Precio_Unitario BigInt? @map("Precio Unitario")
-  Precio_Total    BigInt? @map("Precio Total")
-  A_o             String? @map("Año")
+  Cantidad        Int?
+  Precio_Unitario Int?
+  Precio_Total    Int?
+  A_o             String?
   Mes             String?
   id              Int     @id @default(autoincrement())
 }
@@ -32,8 +32,8 @@ model facturas {
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model precios {
   Identificador String?
-  Precio        BigInt?
-  A_o           String? @map("Año")
+  Precio        Int?
+  A_o           String?
   Mes           String?
   id            Int     @id @default(autoincrement())
 }
@@ -41,8 +41,8 @@ model precios {
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model inventario {
   Identificador String?
-  Cantidad      BigInt?
-  A_o           String? @map("Año")
+  Cantidad      Int?
+  A_o           String?
   Mes           String?
   id            Int     @id @default(autoincrement())
 }
@@ -50,8 +50,8 @@ model inventario {
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model productos {
   ID            String  @id
-  Categor_a     String? @map("Categoría")
-  Sub_categor_a String? @map("Sub-categoría")
+  Categor_a     String?
+  Sub_categor_a String?
   Nombre        String?
 }
 
@@ -59,7 +59,7 @@ model productos {
 model proveedores {
   ID                 String  @id
   Proveedor          String?
-  Contacto_comercial String? @map("Contacto comercial")
+  Contacto_comercial String?
   Email              String?
-  Tel_fono           String? @map("Teléfono")
+  Tel_fono           String?
 }
