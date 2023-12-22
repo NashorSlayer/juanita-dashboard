@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model boletas {
+  Boleta       String?
+  Productos    String?
+  Precio_Total Float?  @map("Precio Total")
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model facturas {
+  Proveedor       String?
+  Producto        String?
+  Cantidad        BigInt?
+  Precio_Unitario BigInt? @map("Precio Unitario")
+  Precio_Total    BigInt? @map("Precio Total")
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model precios {
+  Identificador String?
+  Precio        BigInt?
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model inventario {
+  Identificador String?
+  Cantidad      BigInt?
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model productos {
+  ID            String?
+  Categor_a     String? @map("Categoría")
+  Sub_categor_a String? @map("Sub-categoría")
+  Nombre        String?
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model proveedores {
+  ID                 String?
+  Proveedor          String?
+  Contacto_comercial String? @map("Contacto comercial")
+  Email              String?
+  Tel_fono           String? @map("Teléfono")
+
+  @@ignore
+}
